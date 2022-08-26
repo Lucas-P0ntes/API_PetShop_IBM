@@ -3,7 +3,7 @@ package com.example.atividadeibm.Model;
 import javax.persistence.*;
 
 @Entity
-@Table(nome="cliente")
+@Table(name="cliente")
 public class ClienteModel {
     @Column(name="id")
     @Id
@@ -11,7 +11,7 @@ public class ClienteModel {
     private Integer id;
 
     private String nome;
-    private Integer telefone;
+    private String telefone;
 
     public Integer getId() {
         return id;
@@ -29,11 +29,11 @@ public class ClienteModel {
         this.nome = nome;
     }
 
-    public Integer getTelefone() {
+    public String getTelefone() {
         return telefone;
     }
 
-    public void setTelefone(Integer telefone) {
+    public void setTelefone(String telefone) {
         this.telefone = telefone;
     }
 }
