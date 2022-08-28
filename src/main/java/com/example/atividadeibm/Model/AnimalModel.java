@@ -1,6 +1,13 @@
 package com.example.atividadeibm.Model;
 
+import javax.persistence.*;
+
+@Entity
+@Table(name="animal")
 public class AnimalModel {
+    @Column(name="id")
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     private String nome;
     private String peso;

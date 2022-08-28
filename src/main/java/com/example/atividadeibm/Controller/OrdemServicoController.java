@@ -1,6 +1,6 @@
 package com.example.atividadeibm.Controller;
 
-import com.example.atividadeibm.DAO.OrdemServicoDAO;
+import com.example.atividadeibm.RepositorioDAO.OrdemServicoDAO;
 import com.example.atividadeibm.Model.OrdemServicoModel;
 
 import org.springframework.beans.factory.annotation.Autowired;

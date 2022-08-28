@@ -1,6 +1,6 @@
 package com.example.atividadeibm.Controller;
 
-import com.example.atividadeibm.DAO.AnimalDAO;
+import com.example.atividadeibm.RepositorioDAO.AnimalDAO;
 
 import com.example.atividadeibm.Model.AnimalModel;
 
@@ -15,7 +15,7 @@ public class AnimalController {
     @Autowired
     private AnimalDAO dao ;
 
-    @GetMapping("/Animalgetall")
+    @GetMapping("/animalgetall")
     public ArrayList<AnimalModel> Recuperartodos(){
         ArrayList<AnimalModel> lista = (ArrayList<AnimalModel>) dao.findAll();
         return lista;

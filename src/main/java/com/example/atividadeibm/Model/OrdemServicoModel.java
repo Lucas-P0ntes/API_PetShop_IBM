@@ -1,10 +1,17 @@
 package com.example.atividadeibm.Model;
 
+import javax.persistence.*;
+
+@Entity
+@Table(name="ordem")
 public class OrdemServicoModel {
+    @Column(name="id")
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
-    private Double valo;
+    private Double valor;
     private String hora_entrada;
-    private String hora_retirada;
+    private String hora_saida;
 
 
     public Integer getId() {
@@ -15,12 +22,12 @@ public class OrdemServicoModel {
         this.id = id;
     }
 
-    public Double getValo() {
-        return valo;
+    public Double getValor() {
+        return valor;
     }
 
-    public void setValo(Double valo) {
-        this.valo = valo;
+    public void setValor(Double valor) {
+        this.valor = valor;
     }
 
     public String getHora_entrada() {
@@ -31,11 +38,11 @@ public class OrdemServicoModel {
         this.hora_entrada = hora_entrada;
     }
 
-    public String getHora_retirada() {
-        return hora_retirada;
+    public String getHora_saida() {
+        return hora_saida;
     }
 
-    public void setHora_retirada(String hora_retirada) {
-        this.hora_retirada = hora_retirada;
+    public void setHora_saida(String hora_saida) {
+        this.hora_saida = hora_saida;
     }
 }

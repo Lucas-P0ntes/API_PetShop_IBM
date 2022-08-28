@@ -1,4 +1,4 @@
-package com.example.atividadeibm.DAO;
+package com.example.atividadeibm.RepositorioDAO;
 
 import org.springframework.data.repository.CrudRepository;
 
