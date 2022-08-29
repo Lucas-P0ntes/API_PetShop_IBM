@@ -14,12 +14,20 @@ public class ClienteServiceImpl implements IClienteService {
 
     @Override
     public ClienteModel criarnovo(ClienteModel novo) {
+        if(  novo.getNome()!=null && novo.getTelefone()!=null ){
+            return  dao.save(novo);
+        }
         return null;
     }
 
     @Override
     public ClienteModel atualizardados(ClienteModel dados) {
+        if(dados.getId()!=null && dados.getNome()!=null && dados.getTelefone()!=null ){
+            return  dao.save(dados);
+        }
         return null;
+
+
     }
 
     @Override
@@ -31,11 +39,14 @@ public class ClienteServiceImpl implements IClienteService {
 
     @Override
     public ClienteModel buscarpeloid(Integer id) {
-        return null;
+        return dao.findById(id).orElse(null);
+
+
     }
 
     @Override
     public ClienteModel excluircliente(Integer id) {
-        return null;
+         dao.deleteById(id);
+      return null;
     }
 }
