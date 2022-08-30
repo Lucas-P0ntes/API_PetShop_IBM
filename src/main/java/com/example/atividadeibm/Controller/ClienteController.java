@@ -1,6 +1,5 @@
 package com.example.atividadeibm.Controller;
 
-import com.example.atividadeibm.RepositorioDAO.ClienteDAO;
 import com.example.atividadeibm.Model.ClienteModel;
 import com.example.atividadeibm.Service.IClienteService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -44,6 +43,8 @@ public class ClienteController {
 
 
     }
+
+
     @GetMapping ("/clientes/{id}")
     public ResponseEntity<ClienteModel> buscarid(@PathVariable Integer id){
         ClienteModel res= service.buscarpeloid(id);

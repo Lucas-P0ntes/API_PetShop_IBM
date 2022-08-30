@@ -10,9 +10,9 @@ public class AnimalModel {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     private String nome;
-    private String peso;
+    private Integer peso;
     private Integer idade;
-    private Integer id_cliente;
+    private Integer id_client;
 
     public Integer getId() {
         return id;
@@ -30,11 +30,11 @@ public class AnimalModel {
         this.nome = nome;
     }
 
-    public String getPeso() {
+    public Integer getPeso() {
         return peso;
     }
 
-    public void setPeso(String peso) {
+    public void setPeso(Integer peso) {
         this.peso = peso;
     }
 
@@ -47,10 +47,10 @@ public class AnimalModel {
     }
 
     public Integer getId_cliente() {
-        return id_cliente;
+        return id_client;
     }
 
     public void setId_cliente(Integer id_cliente) {
-        this.id_cliente = id_cliente;
+        this.id_client = id_cliente;
     }
 }
