@@ -1,6 +1,6 @@
 package com.example.atividadeibm.Service;
 
-import com.example.atividadeibm.Model.ClienteModel;
+
 import com.example.atividadeibm.Model.OrdemServicoModel;
 
 import java.util.ArrayList;

@@ -1,28 +1,47 @@
 package com.example.atividadeibm.Controller;
 
-import com.example.atividadeibm.RepositorioDAO.OrdemServicoDAO;
 import com.example.atividadeibm.Model.OrdemServicoModel;
 
+
+import com.example.atividadeibm.Service.IOrdemService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
 @RestController
 
 public class OrdemServicoController {
     @Autowired
-    private OrdemServicoDAO dao;
+    private IOrdemService service;
 
-    @GetMapping("/ordemgetall")
+    @GetMapping("/ordem")
     public ArrayList<OrdemServicoModel> Recuperartodos(){
-        ArrayList<OrdemServicoModel> lista = (ArrayList<OrdemServicoModel>) dao.findAll();
-        return lista;
+        return service.busarTodos();
+
+    }
+    @GetMapping("/ordem/{id}")
+    public OrdemServicoModel buscarPorId(@PathVariable Integer id){
+        OrdemServicoModel res =service.buscarPeloId(id);
+        return res;
+    }
+    @PostMapping("/ordem")
+    public OrdemServicoModel criarNovo(@RequestBody OrdemServicoModel dados){
+        return service.criarNovo(dados);
+    }
+    @PutMapping("/ordem")
+    public OrdemServicoModel atualizar(@RequestBody OrdemServicoModel dados){
+        return service.atualizar(dados);
+    }
+    @DeleteMapping("/ordem/{id}")
+    public OrdemServicoModel apagar(@PathVariable Integer id){
+            return service.excluirPeloId(id);
+        }
     }
 
 
 
-}
+
+
 
 
 
